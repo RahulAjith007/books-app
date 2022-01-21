@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Django course</title>
+    </head>
+    <body>
+        {% if book%}
+        <div>
+            <img src="{{book.thumbnailUrl}}" width="200"/>
+            <h1>{{book.title}}</h1>
+            <p>{{book.shortDescription}}</p>
+            <p>{{book.longDescription}}</p>
+        </div>
+        {% else %}
+        <div>
+            <p>Book not found
+        </div>
+        {% endif %}
+    </body>
+</html>

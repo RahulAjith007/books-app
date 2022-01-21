@@ -5,7 +5,16 @@
         <title>Django course</title>
     </head>
     <body>
-        <h1>Django books App</h1>
-        <h3>{{ name }}</h3>
+        <h1>Programming Books</h1>
+        {% for book in books %}
+        <a 
+        {% comment %} href="/book/{{book.id}}" {% endcomment %}
+        href="{% url 'book.show' book.id%}"
+        
+        >
+            <p>{{ book.title }}</p>
+            <img src="{{book.thumbnailUrl}}" width="200"/>
+        </a>
+        {% endfor %}
     </body>
 </html>
